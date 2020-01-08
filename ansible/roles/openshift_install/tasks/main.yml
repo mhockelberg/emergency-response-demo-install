@@ -1,5 +1,15 @@
 ---
 
+- name: install 3scale
+  import_role:
+    name: 3scale_install
+  vars:
+    namespace: "{{ namespace_threescale_operator }}"
+    resources_dir: "{{ resources_base_dir }}/3scale-install"
+    work_dir_name: 3scale
+  when: threescale_install
+
+
 - name: install kafka operator
   import_role:
     name: openshift_strimzi_operator
@@ -72,6 +82,7 @@
     namespace: "{{ namespace_datagrid }}"
     resources_dir: "{{ resources_base_dir }}/datagrid"
     work_dir_name: datagrid
+
 
 - name: install assignment rules model
   import_role:

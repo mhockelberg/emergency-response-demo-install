@@ -3,11 +3,12 @@ kind: APIManager
 metadata:
   name: apim-apimanager
 spec:
-  wildcardDomain: {{ wildcard-domain }}
+  wildcardDomain: api.{{ ocp_domain }}
+  resourceRequirementsEnabled: {{ api_resource_requirements_enabled }}
   system:
     fileStorage: 
       amazonSimpleStorageService:
-        awsRegion: {{ aws-region }}
-        awsBucket: {{ aws-bucket }}
+        awsRegion: {{ api_aws_region }}
+        awsBucket: {{ api_aws_bucket }}
         awsCredentialsSecret: 
-          name: {{ aws-auth }}
+          name: {{ api_aws_auth }}

@@ -1,0 +1,11 @@
+---
+
+threescale_install: True
+namespace_threescale_operator: 3scale-operator
+threescale_operator_version_label: v0.4.1
+api-aws-region: changeme
+api-aws-bucket: changeme
+api-aws-auth: changeme
+api_aws_key: changeme
+api_aws_secret: changeme
+api_resource_requirements_enabled: false
