@@ -33,7 +33,7 @@
 
   - name: "Define AWS S3 Secret"
     template:
-      src: "{{ resources_base_dir }}/3scale-install/custom-resources/aws-auth.yaml"
+      src: "{{ resources_base_dir }}/3scale-install/custom-resources/aws-auth.yml"
       dest: "{{ work_dir }}/aws-auth.yml"
   - shell: "oc create -f {{ work_dir }}/aws-auth.yml -n {{ namespace_threescale_operator }}"
   
@@ -50,7 +50,7 @@
   
   - name: "Create 3scale API Manager"
     template:
-      src: "{{ resources_base_dir }}/3scale-install/custom-resources/api-manager.yaml"
+      src: "{{ resources_base_dir }}/3scale-install/custom-resources/api-manager.yml"
       dest: "{{ work_dir }}/api-manager.yml"
   - shell: "oc create -f {{ work_dir }}/api-manager.yml -n {{ namespace_threescale_operator }}"
   
